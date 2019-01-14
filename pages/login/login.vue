@@ -131,7 +131,12 @@
 								 * 实际开发中，获取用户信息后，需要将信息上报至服务端。
 								 * 服务端可以用 userInfo.openId 作为用户的唯一标识新增或绑定用户信息。
 								 */
-								this.toMain(infoRes.userInfo);
+								http_util.login_qq({
+									openId: infoRes.userInfo.openId
+								}, function(res) {
+									this.toMain(infoRes.userInfo);
+								});
+								// this.toMain(infoRes.userInfo);
 							}
 						});
 					},

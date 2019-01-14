@@ -100,5 +100,8 @@
         "setting" : {
             "urlCheck" : true
         }
+    },
+    "h5" : {
+        "title" : ""
     }
 }

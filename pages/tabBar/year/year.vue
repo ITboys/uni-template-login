@@ -23,6 +23,7 @@
 
 <script>
 	var dateUtils = require('../../../common/util.js').dateUtils;
+	import http_util from '../../../utils/http.js'
 
 	export default {
 		data() {
@@ -77,6 +78,9 @@
 			this.getBanner();
 			this.getList();
 		},
+		onShow: function() {
+			http_util.initSubmit();
+		},
 		onPullDownRefresh() {
 			this.reload = true;
 			this.last_id = "";
@@ -89,7 +93,7 @@
 		methods: {
 			getBanner() {
 				return;
-				
+
 				let data = {
 					column: "id,post_id,title,author_name,cover,published_at" //需要的字段名
 				};

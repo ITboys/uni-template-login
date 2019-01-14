@@ -1,6 +1,5 @@
 <template>
 	<view class="page">
-		<page-head :title="title"></page-head>
 		<view class="uni-product-list">
 			<view class="uni-product" v-for="(product,index) in productList" :key="index" @click="buyProduct(product)">
 				<view class="image-view">
@@ -24,7 +23,6 @@
 	export default {
 		data() {
 			return {
-				title: 'product-list',
 				productList: [],
 				renderImage: false,
 				page: 1,
@@ -103,6 +101,9 @@
 			setTimeout(() => {
 				this.renderImage = true;
 			}, 300);
+		},
+		onShow: function() {
+			http_util.initSubmit();
 		},
 		onReachBottom: function() {
 			this.showLoadMore = true;
