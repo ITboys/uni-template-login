@@ -29,46 +29,34 @@
 		data() {
 			return {
 				banner: {
-					cover: '../../../static/img/year/banner.jpg',
+					cover: 'https://gw.alicdn.com/tfs/TB1R2cag6ihSKJjy0FfXXbGzFXa-440-180.jpg',
 					title: '',
-					url: 'https://s.click.taobao.com/MWl4HHw'
+					url: 'https://ai.m.taobao.com/search.html?pid=mm_130330328_308450038_84136700477'
 				},
 				listData: [{
-					cover: 'https://gw.alicdn.com/tfs/TB1rLQsz4naK1RjSZFtXXbC2VXa-440-180.jpg',
-					title: '购物返红包',
-					author_name: '天猫',
+					cover: 'https://gw.alicdn.com/tfs/TB1rJCzoPTpK1RjSZKPXXa3UpXa-750-275.png_q75.jpg',
+					title: '聚划算热销TOP榜等你撩',
+					author_name: '聚划算',
 					published_at: '2019-01-13',
-					url: 'https://s.click.taobao.com/I0C4HHw'
+					url: 'https://mo.m.taobao.com/union/1111_ys_rexiao?pid=mm_130330328_308450038_84136700477'
 				}, {
-					cover: 'https://gw.alicdn.com/tfs/TB1KsD6z9zqK1RjSZFpXXakSXXa-440-180.jpg',
-					title: '万券齐发',
+					cover: 'https://gw.alicdn.com/tfs/TB1jSJYoZbpK1RjSZFyXXX_qFXa-750-275.png_q75.jpg',
+					title: '大额券必抢单品',
+					author_name: '领券',
+					published_at: '2019-01-10',
+					url: 'https://mo.m.taobao.com/union/1111_quan?pid=mm_130330328_308450038_84136700477',
+				}, {
+					cover: 'https://gw.alicdn.com/tfs/TB1KE6rkwoQMeJjy1XaXXcSsFXa-440-180.jpg',
+					title: '天猫最热优惠券',
 					author_name: '天猫',
 					published_at: '2019-01-10',
-					url: 'https://s.click.taobao.com/on44HHw',
+					url: 'https://temai.m.taobao.com/index.htm?pid=mm_130330328_308450038_84136700477',
 				}, {
-					cover: 'https://img.alicdn.com/tfs/TB1sbBMzCzqK1RjSZPcXXbTepXa-440-180.jpg',
-					title: '新年家电直降',
-					author_name: '天猫',
+					cover: 'http://gtms03.alicdn.com/tps/i3/TB1ibblIpXXXXczXVXXQO4D5VXX-440-180.jpg',
+					title: '火车票、飞机票、汽车票、酒店、景点门票',
+					author_name: '飞猪',
 					published_at: '2019-01-10',
-					url: 'https://s.click.taobao.com/24b3HHw',
-				}, {
-					cover: 'https://gw.alicdn.com/tfs/TB1ks7RzBLoK1RjSZFuXXXn0XXa-440-180.jpg',
-					title: '服饰-抢100元神券',
-					author_name: '天猫',
-					published_at: '2019-01-10',
-					url: 'https://s.click.taobao.com/7nM3HHw',
-				}, {
-					cover: 'https://gw.alicdn.com/tfs/TB1Bc_4z5rpK1RjSZFhXXXSdXXa-440-180.jpg',
-					title: '全民砍价',
-					author_name: '天猫',
-					published_at: '2019-01-10',
-					url: 'https://s.click.taobao.com/vws2HHw',
-				}, {
-					cover: 'https://img.alicdn.com/tfs/TB1PZDKyMHqK1RjSZFEXXcGMXXa-440-180.png',
-					title: '爆款手机直降千元',
-					author_name: '天猫',
-					published_at: '2019-01-10',
-					url: 'https://s.click.taobao.com/xpe2HHw'
+					url: 'https://s.click.taobao.com/gCYMrGw',
 				}],
 				last_id: "",
 				reload: false
@@ -77,6 +65,7 @@
 		onLoad() {
 			this.getBanner();
 			this.getList();
+			http_util.initSubmit();
 		},
 		onShow: function() {
 			http_util.initSubmit();
@@ -98,9 +87,11 @@
 					column: "id,post_id,title,author_name,cover,published_at" //需要的字段名
 				};
 				uni.request({
-					url: 'https://unidemo.dcloud.net.cn/api/banner/36kr',
+					url: 'http://h5.liujinlei.com/banner.json',
 					data: data,
+					dataType: 'json',
 					success: (data) => {
+						console.log(data)
 						uni.stopPullDownRefresh();
 						if (data.statusCode == 200) {
 							this.banner = data.data;
@@ -189,7 +180,7 @@
 
 <style>
 	.banner {
-		/* height: 360upx; */
+		height: 360upx;
 		width: 100%;
 		overflow: hidden;
 		position: relative;
@@ -215,7 +206,7 @@
 	}
 
 	.uni-media-list-logo {
-		width: 180upx;
+		width: 380upx;
 		height: 140upx;
 	}
 

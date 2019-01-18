@@ -2,8 +2,8 @@
     "name" : "省优惠",
     "appid" : "__UNI__20A75DF",
     "description" : "自用省钱，超低优惠券，省钱利器。",
-    "versionName" : "1.0.0",
-    "versionCode" : "100",
+    "versionName" : "1.0.1",
+    "versionCode" : 101,
     "transformPx" : true,
     "app-plus" : {
         /* 5+App特有相关 */

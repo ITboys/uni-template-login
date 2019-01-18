@@ -4,9 +4,13 @@
 		{
 			"path": "pages/tabBar/index/product-list",
 			"style": {
-				"navigationBarTitleText": "爆款商品",
-				"enablePullDownRefresh": true,
-				"onReachBottomDistance": 20
+				"navigationBarTitleText": "精选商品",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/tabBar/index/index",
+			"style": {
+				"navigationBarTitleText": "精选商品"
 			}
 		},
 		{
@@ -59,7 +63,7 @@
 		"backgroundColor": "#F8F8F8",
 		"list": [{
 				"pagePath": "pages/tabBar/index/product-list",
-				"text": "精选",
+				"text": "首页",
 				"iconPath": "static/img/home.png",
 				"selectedIconPath": "static/img/homeHL.png"
 			},
@@ -68,15 +72,16 @@
 				"text": "年货节",
 				"iconPath": "static/img/user.png",
 				"selectedIconPath": "static/img/userHL.png"
-			},
-			{
-				"pagePath": "pages/tabBar/user/user_index",
-				"text": "我的",
-				"iconPath": "static/img/user.png",
-				"selectedIconPath": "static/img/userHL.png"
 			}
 		]
 	},
+	// ,
+	// 			{
+	// 				"pagePath": "pages/tabBar/user/user_index",
+	// 				"text": "我的",
+	// 				"iconPath": "static/img/user.png",
+	// 				"selectedIconPath": "static/img/userHL.png"
+	// 			}
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarBackgroundColor": "#F8F8F8",
